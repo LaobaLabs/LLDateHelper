@@ -17,7 +17,7 @@ let kLLDateHelperSecondTimeName = "second"
 
 struct LLDateHelper
 {
-    func getTimeToDate(fromDate date : NSDate, withNumberOfUnits numberOfUnitsAskedFor : Int) -> String
+    func getTimeToDate(fromDate : NSDate, toDate : NSDate, withNumberOfUnits numberOfUnitsAskedFor : Int) -> String
     {
         let calendar = Calendar.current
         
@@ -29,8 +29,8 @@ struct LLDateHelper
                                                        .second]
         
         let components = calendar.dateComponents(calendarUnits,
-                                                 from: date as Date,
-                                                 to: Date())
+                                                 from: fromDate as Date,
+                                                 to: toDate as Date)
         var timeStringsArray : [String] = []
         
         let timeValuesArray = [components.year!,
